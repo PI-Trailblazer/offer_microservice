@@ -1,8 +1,8 @@
 from typing import Optional
 from typing import List
 
-from sqlalchemy import String, Integer, Boolean, Float
-from sqlalchemy.orm import Mapped, mapped_column, ForeignKey
+from sqlalchemy import String, Integer, Boolean, Float, ForeignKey
+from sqlalchemy.orm import Mapped, mapped_column
 
 from app.db.base_class import Base
 from app.core.config import settings
