@@ -10,10 +10,11 @@ from app.core.config import settings
 
 class Review(Base):
     id: Mapped[int] = mapped_column("id", Integer, primary_key=True)
-    userid: Mapped[int] = mapped_column(Integer, nullable=False, index=True)
+    userid: Mapped[str] = mapped_column(String(128), nullable=False, index=True)
     offerid: Mapped[int] = mapped_column(
         ForeignKey(f"{settings.SCHEMA_NAME}.offer.id", ondelete="CASCADE"),
         index=True,
+        nullable=False,
     )
     comment: Mapped[str] = mapped_column(String(264), nullable=False)
     score: Mapped[float] = mapped_column(Float, nullable=False)
