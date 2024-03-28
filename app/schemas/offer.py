@@ -9,11 +9,12 @@ class Offer(BaseModel):
     city: str
     postal_code: str
     price: float
-    score: float
+    max_review_score: float
+    n_reviews: int
     discount: Optional[float] = 0.0
     tags: Optional[List[str]]
     max_quantity: int
-    modules: Optional[List[str]]
+    modules: Optional[List[int]]
 
 class OfferCreate(Offer):
     id: int
@@ -26,11 +27,12 @@ class OfferUpdate(Offer):
     city: Optional[str]
     postal_code: Optional[str]
     price: Optional[float]
-    score: Optional[float]
+    max_review_score: Optional[float]
+    n_reviews: Optional[int]
     discount: Optional[float]
     tags: Optional[List[str]]
     max_quantity: Optional[int]
-    modules: Optional[List[str]]
+    modules: Optional[List[int]]
 
 class OfferInDB(Offer):
     id: int

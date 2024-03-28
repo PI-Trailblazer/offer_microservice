@@ -1,18 +1,19 @@
 from typing import Optional, List
 
 from pydantic import BaseModel
+from datetime import date as Date
 
 class Reservation(BaseModel):
-    init_date: str
-    end_date: str
+    init_date: Date
+    end_date: Date
 
 class ReservationCreate(Reservation):
     userid: int
     offerid: int
 
 class ReservationUpdate(Reservation):
-    init_date: Optional[str]
-    end_date: Optional[str]
+    init_date: Optional[Date]
+    end_date: Optional[Date]
 
 class ReservationInDB(Reservation):
     id: int
