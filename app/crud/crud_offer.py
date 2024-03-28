@@ -4,7 +4,7 @@ from app.models.offer import Offer
 from app.schemas.offer import OfferCreate, OfferUpdate
 
 
-class CRUDUser(CRUDBase[Offer, OfferCreate, OfferUpdate]): ...
+class CRUDOffer(CRUDBase[Offer, OfferCreate, OfferUpdate]): ...
 
 
-user = CRUDUser(Offer)
+offer = CRUDOffer(Offer)
